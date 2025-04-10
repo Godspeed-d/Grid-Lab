@@ -46,6 +46,7 @@
             display: flex;
             justify-content: space-between;
             padding: 1em;
+            flex-wrap: wrap; 
         }
 
         article {
@@ -68,10 +69,51 @@
         }
 
         footer {
-            background-color: #ff66b2; /* Pink color */
+            background-color: #ff66b2;
             color: white;
             text-align: center;
             padding: 1em;
+        }
+
+        @media screen and (max-width: 768px) {
+            main {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            article {
+                width: 90%;
+                margin: 1em 0;
+            }
+
+            aside {
+                width: 90%; 
+                margin: 1em 0;
+            }
+
+            nav ul li {
+                width: 50%; 
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            nav ul li {
+                width: 100%; 
+            }
+        }
+
+        #galGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 20px;
+            align-items: stretch;
+            margin-bottom: 20px;
+        }
+
+        #galGrid img {
+            border: 1px solid #CCCCCC;
+            box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+            max-width: 100%;
         }
     </style>
 </head>
@@ -94,7 +136,7 @@
     <main>
         <article>
             <h1>Article Title Goes Here</h1>
-            <img src="M8_Lab_Pic.png" alt="Image description goes here">
+            <img src="images/M8_Lab_Pic.png" alt="Image description goes here">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet consectetur dui. Integer auctor velit sit amet dui auctor, eu hendrerit lectus volutpat. Mauris lobortis mi et eros blandit, ac tincidunt purus venenatis.</p>
         </article>
 
@@ -108,6 +150,16 @@
             </ol>
         </aside>
     </main>
+
+    <h2>Sample Image Gallery</h2>
+    <div id="galGrid">
+        <img src="images/M8_Lab_Pic.png" alt="Placeholder image 1">
+        <img src="images/M8_Lab_Pic.png" alt="Placeholder image 1">
+        <img src="images/M8_Lab_Pic.png" alt="Placeholder image 1">
+        <img src="images/M8_Lab_Pic.png" alt="Placeholder image 1">
+        <img src="images/M8_Lab_Pic.png" alt="Placeholder image 1">
+        <img src="images/M8_Lab_Pic.png" alt="Placeholder image 1">
+    </div>
 
     <footer>
         <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</small></p>
